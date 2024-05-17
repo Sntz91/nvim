@@ -4,7 +4,6 @@ vim.opt.relativenumber = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.numberwidth = 5
-vim.opt.mouse = "a"
 vim.opt.termguicolors = true
 vim.opt.syntax = "enable"
 vim.opt.colorcolumn = "80"
@@ -13,4 +12,13 @@ vim.opt.colorcolumn = "80"
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.hlsearch = false
+
+-- Highlight yank
+vim.api.nvim_create_autocmd("TextYankPost", {
+	desc = "highlight when yanking (copying) text",
+	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})
 

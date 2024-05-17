@@ -6,15 +6,15 @@ return {
 		config = function()
 			local builtin = require("telescope.builtin")
 			-- opened files
-			vim.keymap.set("n", "<leader><space>", "<cmd>Telescope buffers<cr>")
+			vim.keymap.set("n", "<leader><leader>", "<cmd>Telescope buffers<cr>")
 			-- recently opened files
-			vim.keymap.set("n", "<leader>?", "<cmd>Telescope oldfiles<cr>")
+			vim.keymap.set("n", "<leader>.", "<cmd>Telescope oldfiles<cr>")
 			-- search in cwd
-			vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+			vim.keymap.set("n", "<leader>sf", builtin.find_files, {})
 			-- search for pattern in all files cwd
-			vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+			vim.keymap.set("n", "<leader>sg", builtin.live_grep, {})
 			-- pettern in this file
-			vim.keymap.set("n", "<leader>fs", "<cmd>Telescope current_buffer_fuzzy_find<cr>")
+			vim.keymap.set("n", "<leader>ss", "<cmd>Telescope current_buffer_fuzzy_find<cr>")
 		end,
 	},
 	{
